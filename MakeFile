@@ -1,0 +1,22 @@
+objects = Test.o Gragh.o Queue.o Stack.o
+
+all:Test
+
+Test:$(objects)
+	gcc -o Test $(objects)
+	
+Test.o:Test.c
+	gcc -c -g Test.c
+
+Gragh.o:Gragh.c Gragh.h
+	gcc -c -g Gragh.c
+
+Queue.o:Queue.c Queue.h
+	gcc -c -g Queue.c
+
+Stack.o:Stack.c Stack.h
+	gcc -c -g Stack.c
+
+.PHONY:clean
+clean:
+	-rm -rf #(objects)
